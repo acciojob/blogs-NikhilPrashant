@@ -16,14 +16,14 @@ class User {
     String firstName = "test";
     String lastName = "test";
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Blog> blogs;
+    private List<Blog> blogList;
 
     public User() {
-        blogs = new ArrayList<>();
+        blogList = new ArrayList<>();
     }
 
     public User(String username, String password) {
-        blogs = new ArrayList<>();
+        blogList = new ArrayList<>();
         this.username = username;
         this.password = password;
     }
@@ -68,11 +68,11 @@ class User {
         this.lastName = lastName;
     }
 
-    public List<Blog> getBlogs() {
-        return blogs;
+    public List<Blog> getBlogList() {
+        return blogList;
     }
 
-    public void setBlogs(List<Blog> blogs) {
-        this.blogs = blogs;
+    public void setBlogList(List<Blog> blogList) {
+        this.blogList = blogList;
     }
 }
