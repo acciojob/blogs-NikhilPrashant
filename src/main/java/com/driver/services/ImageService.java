@@ -17,7 +17,7 @@ public class ImageService {
     public Image addImage(Integer blogId, String description, String dimensions){
         //add an image to the blog
         Blog blog = blogRepository2.findById(blogId).get();
-        com.driver.models.Image image = new com.driver.models.Image(description, dimensions, blog);
+        Image image = new Image(description, dimensions, blog);
         imageRepository2.save(image);
         blog.getImages().add(image);
         return image;
